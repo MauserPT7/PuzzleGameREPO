@@ -8,11 +8,11 @@ public class PlayerController : MonoBehaviour
     public float maxMoveSpeed = 5.0f;
     public float jumpForce = 10.0f;
 
-    public bool isGrounded = false;
-
     Rigidbody2D myRB2D;
 
     public GameObject checkpoint1;
+
+    public LayerMask groundLayer;
 
     // Use this for initialization
     void Start () 
@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     // Use for physics calculations (rigidbodies)
     void FixedUpdate ()
     {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up);
+
         float moveHorizontal = Input.GetAxis("Horizontal");
 
         moveSpeed = maxMoveSpeed;
@@ -39,7 +41,7 @@ public class PlayerController : MonoBehaviour
         myRB2D.velocity = new Vector2(moveHorizontal * moveSpeed, myRB2D.velocity.y);
         
         if(myRB2D.velocity.x == 0
-           && isGrounded)
+           && IsGrounded())
         {
             myRB2D.gravityScale = 0;
         } else {
@@ -47,19 +49,26 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Space)
-            && isGrounded)
+            && IsGrounded())
         {
-            Debug.Log(Time.time);
             myRB2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-            isGrounded = false;
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    public bool IsGrounded()
     {
-        if(collision.gameObject.tag == "World1" || collision.gameObject.tag == "World2")
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.down;
+
+        float distance = 1.0f;
+
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+
+        if (hit.collider != null)
         {
-            isGrounded = true;
+            return true;
         }
+
+        return false;
     }
 }

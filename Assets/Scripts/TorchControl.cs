@@ -24,4 +24,19 @@ public class TorchControl : MonoBehaviour {
 		transform.eulerAngles = new Vector3(0,0,transform.eulerAngles.z);
 		
 	}
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		//print("enter " + other.gameObject);
+		
+		other.SendMessage("Lit",SendMessageOptions.DontRequireReceiver);
+	}
+
+
+	private void OnTriggerExit2D(Collider2D other)
+	{
+		//print("exit " + other.gameObject);
+		
+		other.SendMessage("Unlit",SendMessageOptions.DontRequireReceiver);
+	}
 }

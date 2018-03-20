@@ -12,7 +12,7 @@ public class TestObject : LightSensitiveObject
 	// Use this for initialization
 	void Start ()
 	{
-		DeactivateTime = 10.0f;
+		deactivateTime = 10.0f;
 	}
 	
 	// Update is called once per frame
@@ -22,7 +22,7 @@ public class TestObject : LightSensitiveObject
 
 	protected override void CheckActive()
 	{
-		if (AmIActive)
+		if (amIActive)
 			MyRenderer.sprite = Yep;
 		else
 		{

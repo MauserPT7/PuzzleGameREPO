@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         Vector2 position = transform.position;
         Vector2 direction = Vector2.down;
 
-        float distance = 1.0f;
+        float distance = 0.6f;
 
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
 

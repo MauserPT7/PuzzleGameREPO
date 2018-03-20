@@ -19,6 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4408340734376808}
+  - component: {fileID: 114172412597482918}
+  - component: {fileID: 114969649849298014}
   - component: {fileID: 212273232319849946}
   - component: {fileID: 61526635092109024}
   m_Layer: 8
@@ -34,8 +36,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1820489715099918}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.74, y: -0.96000004, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.779, y: 0.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -66,6 +68,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.32, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &114172412597482918
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1820489715099918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39a94bac408a634f96f89328dde7ae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amILit: 0
+  amIDarkObject: 0
+  amIActive: 0
+  deactivateTime: 5
+--- !u!114 &114969649849298014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1820489715099918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4315d1a52bc6c5b4b99a22bed1b72b66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amILit: 0
+  amIDarkObject: 0
+  amIActive: 0
+  deactivateTime: 5
+  myBC2D: {fileID: 0}
+  mySR: {fileID: 0}
 --- !u!212 &212273232319849946
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -99,7 +133,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2090780063
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 86a2a43589f885d469fec5da096af21d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

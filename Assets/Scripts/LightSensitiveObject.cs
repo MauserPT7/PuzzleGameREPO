@@ -4,51 +4,54 @@ using UnityEngine;
 
 public class LightSensitiveObject : MonoBehaviour
 {
-	public bool AmILit = false;
+	public bool amILit = false;
+	public bool amIDarkObject = false;
+	public bool amIActive = false;
 
-	public bool AmIDarkObject;
+	public float deactivateTime = 5.0f;
 
-	public bool AmIActive = false;
 
-	public float DeactivateTime = 5.0f;
+    
 
-	protected virtual void CheckActive()
+    protected virtual void CheckActive()
 	{
 		//nothing happens here, create an override method in child class
 	}
 
 	public void Lit()
 	{
-		if (AmIDarkObject) return;
-		AmILit = true;
-		AmIActive = true;
+		if (amIDarkObject) return;
+		amILit = true;
+		amIActive = true;
 		CheckActive();
 	}
 
 	public void Unlit()
 	{
-		if (AmIDarkObject) return;
-		AmILit = false;
+		if (amIDarkObject) return;
+		amILit = false;
 		StartCoroutine(TurnOff());
 	}
 
 	IEnumerator TurnOff()
 	{
-		float mytime = 0.0f;
+		float myTime = 0.0f;
 		
-		while (mytime < DeactivateTime)
+		while (myTime < deactivateTime)
 		{
-			print(mytime);
-			if (AmILit)
+			//print(myTime);
+
+			if (amILit)
 			{
 				yield break;
 			}
 
-			mytime += Time.deltaTime;
+			myTime += Time.deltaTime;
+
 			yield return typeof(WaitForEndOfFrame);
 		}
 
-		AmIActive = false;
+        amIActive = false;
 		CheckActive();
 	}
 }

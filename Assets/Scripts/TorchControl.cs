@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TorchControl : MonoBehaviour {
-
+public class TorchControl : MonoBehaviour
+{
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		AimTorch();
 	}
 
@@ -22,7 +24,6 @@ public class TorchControl : MonoBehaviour {
 		Quaternion myRotation = Quaternion.LookRotation(transform.position - mousePosition,Vector3.forward);
 		transform.localRotation = myRotation;
 		transform.eulerAngles = new Vector3(0,0,transform.eulerAngles.z);
-		
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
@@ -31,7 +32,6 @@ public class TorchControl : MonoBehaviour {
 		
 		other.SendMessage("Lit",SendMessageOptions.DontRequireReceiver);
 	}
-
 
 	private void OnTriggerExit2D(Collider2D other)
 	{

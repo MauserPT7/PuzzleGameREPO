@@ -6,6 +6,7 @@ TagManager:
   tags:
   - World1
   - World2
+  - Spikes
   layers:
   - Default
   - TransparentFX

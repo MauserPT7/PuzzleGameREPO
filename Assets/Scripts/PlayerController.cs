@@ -7,23 +7,35 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 0.0f;
     public float maxMoveSpeed = 5.0f;
     public float jumpForce = 10.0f;
+    public float deathDepth;
+
+    [SerializeField]
+    private bool grounded;
+
+    [SerializeField]
+    private float distance = 0.6f;
+
 
     Rigidbody2D myRB2D;
 
     public GameObject checkpoint1;
+    public GameObject checkpoint2;
+    public GameObject myCurrentCheckpoint;
 
     public LayerMask groundLayer;
 
     // Use this for initialization
     void Start () 
 	{
+        myCurrentCheckpoint = checkpoint1;
         myRB2D = this.gameObject.GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if(transform.position.y <= -10)
+        grounded = IsGrounded();
+		if(transform.position.y <= -deathDepth)
         {
             transform.position = checkpoint1.transform.position;
         }
@@ -39,14 +51,6 @@ public class PlayerController : MonoBehaviour
         moveSpeed = maxMoveSpeed;
 
         myRB2D.velocity = new Vector2(moveHorizontal * moveSpeed, myRB2D.velocity.y);
-        
-        if(myRB2D.velocity.x == 0
-           && IsGrounded())
-        {
-            myRB2D.gravityScale = 0;
-        } else {
-            myRB2D.gravityScale = 1;
-        }
 
         if (Input.GetKeyDown(KeyCode.Space)
             && IsGrounded())
@@ -60,7 +64,6 @@ public class PlayerController : MonoBehaviour
         Vector2 position = transform.position;
         Vector2 direction = Vector2.down;
 
-        float distance = 0.6f;
 
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
 
@@ -70,5 +73,21 @@ public class PlayerController : MonoBehaviour
         }
 
         return false;
+    }
+
+    void OnCollisionEnter2D(Collision2D collider)
+    {
+        if(collider.gameObject.tag == "Spikes")
+        {
+            transform.position = checkpoint1.transform.position;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D trigger)
+    {
+        if(trigger.gameObject.name == "Checkpoint2")
+        {
+            myCurrentCheckpoint = checkpoint2;
+        }
     }
 }

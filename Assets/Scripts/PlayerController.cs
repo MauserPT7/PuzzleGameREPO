@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject checkpoint1;
     public GameObject checkpoint2;
+    public GameObject checkpoint3;
     public GameObject myCurrentCheckpoint;
 
     public LayerMask groundLayer;
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
 		if(transform.position.y <= -deathDepth)
         {
-            transform.position = checkpoint1.transform.position;
+            transform.position = myCurrentCheckpoint.transform.position;
         }
 	}
 
@@ -79,7 +80,7 @@ public class PlayerController : MonoBehaviour
     {
         if(collider.gameObject.tag == "Spikes")
         {
-            transform.position = checkpoint1.transform.position;
+            transform.position = myCurrentCheckpoint.transform.position;
         }
     }
 
@@ -88,6 +89,11 @@ public class PlayerController : MonoBehaviour
         if(trigger.gameObject.name == "Checkpoint2")
         {
             myCurrentCheckpoint = checkpoint2;
+        }
+
+        if (trigger.gameObject.name == "Checkpoint3")
+        {
+            myCurrentCheckpoint = checkpoint3;
         }
     }
 }

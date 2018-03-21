@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
 	void Update () 
 	{
         grounded = IsGrounded();
+
 		if(transform.position.y <= -deathDepth)
         {
             transform.position = checkpoint1.transform.position;
@@ -63,7 +64,6 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 position = transform.position;
         Vector2 direction = Vector2.down;
-
 
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
 

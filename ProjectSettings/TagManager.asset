@@ -18,8 +18,8 @@ TagManager:
   - 
   - Ground
   - NotGround
-  - 
-  - 
+  - Player
+  - Torch
   - 
   - 
   - 

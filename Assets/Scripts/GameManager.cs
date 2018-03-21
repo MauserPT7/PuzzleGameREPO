@@ -2,8 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour 
+public class GameManager : MonoBehaviour
 {
+
+	public Color DarkAmbianceColor;
+
+	public Color LightAmbianceColor;
+	
+	
 	// Use this for initialization
 	void Start () 
 	{
@@ -14,5 +20,18 @@ public class GameManager : MonoBehaviour
 	void Update () 
 	{
 		
+	}
+
+
+	public void LightsOff()
+	{
+		print("lightsoff");
+		RenderSettings.ambientLight = DarkAmbianceColor;
+	}
+
+	public void LightsOn()
+	{	
+		print("lightsOn");
+		RenderSettings.ambientLight = LightAmbianceColor;
 	}
 }

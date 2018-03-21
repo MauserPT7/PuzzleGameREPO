@@ -7,6 +7,7 @@ TagManager:
   - World1
   - World2
   - Spikes
+  - GameManager
   layers:
   - Default
   - TransparentFX

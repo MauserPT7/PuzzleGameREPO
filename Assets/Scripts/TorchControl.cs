@@ -6,11 +6,15 @@ public class TorchControl : MonoBehaviour
 {
 	public bool IsTurnedOn;
 
-	public GameManager myManager;
+	private float _activeTimer = 5;
+	public GameObject myLight;
+
+	public GameManager MyManager;
 	// Use this for initialization
 	void Start ()
 	{
-		myManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+		MyManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+		myLight = transform.GetChild(0).gameObject;
 		TurnTorchOff();
 	}
 	
@@ -36,16 +40,18 @@ public class TorchControl : MonoBehaviour
 	void TurnTorchOn()
 	{
 		print("inside TurnOn");
+		myLight.SetActive(true);
 		gameObject.GetComponent<Collider2D>().enabled = true;
-		myManager.LightsOn();
-		Invoke("TurnTorchOff", 30);
+		MyManager.LightsOn();
+		Invoke("TurnTorchOff", _activeTimer);
 	}
 
 	void TurnTorchOff()
 	{
+		myLight.SetActive(false);
 		gameObject.GetComponent<Collider2D>().enabled = false;
 		
-		myManager.LightsOff();
+		MyManager.LightsOff();
 	}
 	
 

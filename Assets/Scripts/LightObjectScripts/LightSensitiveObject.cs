@@ -54,4 +54,22 @@ public class LightSensitiveObject : MonoBehaviour
         amIActive = false;
 		CheckActive();
 	}
+
+	public void LightsOn()
+	{
+		if (amIDarkObject)
+		{
+			amIActive = false;
+			CheckActive();
+		}
+	}
+
+	public void LightsOff()
+	{
+		if (amIDarkObject)
+		{
+			amIActive = true;
+			CheckActive();
+		}
+	}
 }

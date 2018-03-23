@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 guid: aa4bac9378909bd4891338db78bd3eab
-timeCreated: 1521752321
+timeCreated: 1521774861
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: BoyScout_Jump_Idle_Spritesheet_0
+    21300002: BoyScout_Jump_Idle_Spritesheet_1
+    21300004: BoyScout_Jump_Idle_Spritesheet_2
+    21300006: BoyScout_Jump_Idle_Spritesheet_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,13 +44,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 260
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -66,10 +70,132 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
-    outline: []
+    sprites:
+    - serializedVersion: 2
+      name: BoyScout_Jump_Idle_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 64
+        width: 98
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BoyScout_Jump_Idle_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 68
+        width: 84
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BoyScout_Jump_Idle_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 87
+        width: 80
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BoyScout_Jump_Idle_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 92
+        width: 76
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline:
+    - - {x: -326, y: -62}
+      - {x: -333, y: -69}
+      - {x: -338, y: -80}
+      - {x: -341, y: -108}
+      - {x: -337, y: -119}
+      - {x: -326, y: -120}
+      - {x: -292, y: -67}
+      - {x: -292, y: 105}
+      - {x: -334, y: 159}
+      - {x: -388, y: 159}
+      - {x: -394, y: 142}
+      - {x: -394, y: 36}
+      - {x: -378, y: -113}
+      - {x: -370, y: -135}
+      - {x: -365, y: -138}
+      - {x: -356, y: -138}
+      - {x: -348, y: -121}
+      - {x: -342, y: -84}
+      - {x: -330, y: -56}
+    - - {x: -174, y: -134}
+      - {x: -86, y: -134}
+      - {x: -86, y: 151}
+      - {x: -151, y: 151}
+      - {x: -174, y: 144}
+    - - {x: 67, y: 170}
+      - {x: 50, y: 160}
+      - {x: 50, y: -35}
+      - {x: 70, y: -115}
+      - {x: 134, y: -115}
+      - {x: 134, y: 170}
+    - - {x: 274, y: 171}
+      - {x: 274, y: 6}
+      - {x: 289, y: -110}
+      - {x: 339, y: -110}
+      - {x: 354, y: -108}
+      - {x: 354, y: 171}
     physicsShape: []
   spritePackingTag: 
   userData: 

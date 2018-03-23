@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
 	public Color DarkAmbianceColor;
 
 	public Color LightAmbianceColor;
-	
+
+	public List<GameObject> antiPlatforms;
 	
 	// Use this for initialization
 	void Start () 
@@ -26,14 +27,24 @@ public class GameManager : MonoBehaviour
 
 	public void LightsOff()
 	{
-		print("lightsoff");
+		//print("lightsoff");
 		RenderSettings.ambientLight = DarkAmbianceColor;
+		foreach (GameObject platform in antiPlatforms)
+		{
+			platform.GetComponent<AntiPlatform>().LightsOff();
+		}
+		//BroadcastMessage("LightsOff",SendMessageOptions.DontRequireReceiver);
 	}
 
 	public void LightsOn()
 	{	
-		print("lightsOn");
+		//print("lightsOn");
 		RenderSettings.ambientLight = LightAmbianceColor;
+		foreach (GameObject platform in antiPlatforms)
+		{
+			platform.GetComponent<AntiPlatform>().LightsOn();
+		}
+		//BroadcastMessage("LightsOn",SendMessageOptions.DontRequireReceiver);
 	}
 
     public void RestartButton()
